@@ -1,0 +1,14 @@
+devices:
+  vtempsens:
+    uuid: VIRTUAL-EVENT-GEN-001
+    connector:
+      type: mtconnect
+      agent:
+        port: 2104
+        device_xml: /workspaces/openfactory-benchmark/vendor/virtual_assets/event_generator/device.xml
+        adapter:
+          image: ghcr.io/openfactoryio/virtual-event-generator:${OPENFACTORY_VERSION}
+          port: 7878
+          environment:
+            - SLEEP_INTERVAL=3.0
+            - ADAPTER_PORT=7878

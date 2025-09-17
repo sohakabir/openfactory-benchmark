@@ -1,0 +1,27 @@
+{
+  "name": "OpenFactory-Benchmark — Benchmarking of OpenFactory",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {"moby":false},
+    "ghcr.io/openfactoryio/openfactory-sdk/infra": {
+      "openfactory-version": "main"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "containerEnv": {
+    "OPENFACTORY_ENV": "dev",
+    "ENVIRONMENT": "local",
+    "DEPLOYMENT_PLATFORM": "docker",
+    "OPENFACTORY_UNS_SCHEMA": "/workspaces/openfactory-benchmark/.devcontainer/uns.yml"
+  }
+}
