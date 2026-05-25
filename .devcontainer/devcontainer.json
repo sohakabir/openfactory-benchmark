@@ -1,11 +1,10 @@
 {
   "name": "OpenFactory-Benchmark — Benchmarking of OpenFactory",
-  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "image": "ghcr.io/openfactoryio/devcontainer-py3.14:v0.6.0",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {"moby":false},
-    "ghcr.io/openfactoryio/openfactory-sdk/infra": {
-      "openfactory-version": "main"
-    }
+    "ghcr.io/devcontainers/features/docker-in-docker:3.0.1": {},
+    "ghcr.io/openfactoryio/openfactory-sdk/infra:0.6.0": {}, 
+    "ghcr.io/openfactoryio/openfactory-sdk/opcua-connector:0.6.0": {}
   },
   "customizations": {
     "vscode": {
@@ -19,9 +18,6 @@
     }
   },
   "containerEnv": {
-    "OPENFACTORY_ENV": "dev",
-    "ENVIRONMENT": "local",
-    "DEPLOYMENT_PLATFORM": "docker",
     "OPENFACTORY_UNS_SCHEMA": "/workspaces/openfactory-benchmark/.devcontainer/uns.yml"
   }
 }
