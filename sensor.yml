@@ -1,0 +1,69 @@
+# ---------------------------------------------------------------------------------------
+# 🏭 OpenFactory Device Configuration File
+#
+# To be used in the Dev Container of this repo
+#
+# Deploy with:
+#   docker run -d --name virtual-opcua-sensor -p 4840:4840 -e NUM_SENSORS=2 ghcr.io/openfactoryio/virtual-opcua-sensor
+# ---------------------------------------------------------------------------------------
+devices:
+  vtempsens1:
+
+    uuid: OPCUA-SENSOR-001
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+        subscription:                       # Server-level defaults
+          publishing_interval: 10           # ms, for subscription object
+          queue_size: 1                     # default per monitored item
+          sampling_interval: 0              # ms, 0 = event-driven if supported
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:Humidity
+          tag: Humidity
+        temp_unit:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:TemperatureUnit
+          tag: TemperatureUnit
+          access_level: rw
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1
+      methods:
+        sensor_methods:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1
+  vtempsens2:
+    uuid: OPCUA-SENSOR-002
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:Temperature
+
+          tag: Temperature
+
+        hum:
+
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:Humidity
+
+          tag: Humidity
+
+        sensor_model:
+
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:SensorModel
+
+          tag: SensorModel
+      events:
+
+        sensor_events:
+
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2

@@ -1,0 +1,212 @@
+# -----------------------------------------------------------------------------
+devices:
+  vtempsens1:
+    uuid: OPCUA-SENSOR-001
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+        subscription:
+          publishing_interval: 10
+          queue_size: 1
+          sampling_interval: 0
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:Humidity
+          tag: Humidity
+        temp_unit:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:TemperatureUnit
+          tag: TemperatureUnit
+          access_level: rw
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1
+      methods:
+        sensor_methods:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1
+
+  vtempsens2:
+    uuid: OPCUA-SENSOR-002
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor2
+
+  vtempsens3:
+    uuid: OPCUA-SENSOR-003
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor3/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor3/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor3/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor3
+
+  vtempsens4:
+    uuid: OPCUA-SENSOR-004
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor4/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor4/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor4/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor4
+
+  vtempsens5:
+    uuid: OPCUA-SENSOR-005
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor5/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor5/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor5/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor5
+
+  vtempsens6:
+    uuid: OPCUA-SENSOR-006
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor6/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor6/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor6/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor6
+
+  vtempsens7:
+    uuid: OPCUA-SENSOR-007
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor7/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor7/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor7/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor7
+
+  vtempsens8:
+    uuid: OPCUA-SENSOR-008
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor8/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor8/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor8/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor8
+
+  vtempsens9:
+    uuid: OPCUA-SENSOR-009
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor9/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor9/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor9/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor9
+
+  vtempsens10:
+    uuid: OPCUA-SENSOR-010
+    connector:
+      type: opcua
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor10/2:Temperature
+          tag: Temperature
+        hum:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor10/2:Humidity
+          tag: Humidity
+        sensor_model:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor10/2:SensorModel
+          tag: SensorModel
+      events:
+        sensor_events:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor10

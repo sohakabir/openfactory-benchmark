@@ -1,0 +1,30 @@
+devices:
+  vtempsens1:
+    uuid: VIRTUAL-OPCUA-SENS-001
+
+    connector:
+      type: opcua
+
+      server:
+        uri: opc.tcp://${CONTAINER_IP}:4840/freeopcuas/server/
+        subscription:
+          publishing interval: 10
+
+      variables:
+        temp:
+          browse_path: 0:Root/0:Objects/2:Sensors/2:TemperatureSensor1/2:Temperature
+          tag: Temperature
+        hum:
+          node_id: ns=2;i=5
+          tag: Humidity
+        sensor_model: 
+          node_id: ns=2;i=3
+          tag: SensorModel
+        temp_unit:
+          node_id: ns=2;i=4
+          tag: Temperature_Unit  
+
+      events:
+        sensor_events:
+          node_id: ns=2;i=2
+        

@@ -6,7 +6,7 @@
     "ghcr.io/openfactoryio/openfactory-sdk/infra:0.6.0": {}, 
     "ghcr.io/openfactoryio/openfactory-sdk/opcua-connector:0.6.0": {}
   },
-  "customizations": {
+  "customizations": { 
     "vscode": {
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
